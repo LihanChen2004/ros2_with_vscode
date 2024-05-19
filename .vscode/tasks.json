@@ -55,9 +55,9 @@
         },
         {
             "label": "source-humble",
-            "detail": "Sources the current workspace with bash shell",
+            "detail": "Sources the current workspace with shell",
             "type": "shell",
-            "command": "source ${workspaceFolder}/install/setup.bash && printenv > ${workspaceFolder}/local_humble_ws.env",
+            "command": "source ${workspaceFolder}/install/setup.sh && printenv > ${workspaceFolder}/local_humble_ws.env",
             "group": {
                 "kind": "build",
                 "isDefault": true

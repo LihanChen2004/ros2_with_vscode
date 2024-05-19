@@ -12,7 +12,8 @@
 
     "C_Cpp.codeAnalysis.clangTidy.enabled": true,
     "[cpp]": {
-        "editor.defaultFormatter": "xaver.clang-format"
+        "editor.defaultFormatter": "xaver.clang-format",
+        // "editor.formatOnSave": true
     },
 
     "python.autoComplete.extraPaths": [
