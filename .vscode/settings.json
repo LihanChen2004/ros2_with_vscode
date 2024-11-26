@@ -13,16 +13,18 @@
     "C_Cpp.codeAnalysis.clangTidy.enabled": true,
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format",
-        // "editor.formatOnSave": true
+        "editor.formatOnSave": true
     },
 
     "python.autoComplete.extraPaths": [
         "/opt/ros/humble/lib/python3.10/site-packages/"
     ],
-    "python.envFile": "${workspaceFolder}/.env",
     "python.analysis.extraPaths": [
         "/opt/ros/humble/lib/python3.10/site-packages/"
     ],
-    "python.analysis.typeCheckingMode": "basic",
-    "python.formatting.provider": "black"
+    "python.envFile": "${workspaceFolder}/.env",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+    }
 }
