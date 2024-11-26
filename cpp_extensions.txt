@@ -3,3 +3,5 @@ josetr.cmake-language-support-vscode
 ms-vscode.cmake-tools
 ms-vscode.cpptools
 xaver.clang-format
+llvm-vs-code-extensions.vscode-clangd
+vadimcn.vscode-lldb

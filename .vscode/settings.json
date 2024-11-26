@@ -24,7 +24,7 @@
     ],
     "python.envFile": "${workspaceFolder}/.env",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,
     }
 }
