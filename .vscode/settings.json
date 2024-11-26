@@ -16,15 +16,19 @@
         "editor.formatOnSave": true
     },
 
+    "python.envFile": "${workspaceFolder}/.env",
     "python.autoComplete.extraPaths": [
         "/opt/ros/humble/lib/python3.10/site-packages/"
     ],
     "python.analysis.extraPaths": [
         "/opt/ros/humble/lib/python3.10/site-packages/"
     ],
-    "python.envFile": "${workspaceFolder}/.env",
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,
-    }
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit",
+        }
+    },
 }
