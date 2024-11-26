@@ -24,19 +24,20 @@ The configuration here provided can be used as follows:
 
 ### General Extensions
 
-- [doi.fileheadercomment](https://marketplace.visualstudio.com/items?itemName=doi.fileheadercomment)
-- [eamodio.gitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-- [ms-azuretools.vscode-docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+- [RobbOwen.synthwave-vscode](https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode)
+- [GitHub.copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+- [usernamehw.errorlens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [ms-iot.vscode-ros](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
-- [ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- [smilerobotics.urdf](https://marketplace.visualstudio.com/items?itemName=smilerobotics.urdf)
+- [eamodio.gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [mhutchie.git-graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+- [redjue.git-commit-plugin](https://marketplace.visualstudio.com/items?itemName=redjue.git-commit-plugin)
+- [yzhang.markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+- [DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - [ms-vscode-remote.remote-ssh](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
 - [ms-vscode.remote-explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
-- [ms-vscode.test-adapter-converter](https://marketplace.visualstudio.com/items?itemName=ms-vscode.test-adapter-converter)
-- [ms-vsliveshare.vsliveshare](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [njpwerner.autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
-- [shardulm94.trailing-spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)
-- [smilerobotics.urdf](https://marketplace.visualstudio.com/items?itemName=smilerobotics.urdf)
-- [yzhang.markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+- [ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- [ms-azuretools.vscode-docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 
 To install the recommended extensions do `cat general_extensions.txt | xargs -I {} code --install-extension {}`
 
@@ -46,6 +47,9 @@ To install the recommended extensions do `cat general_extensions.txt | xargs -I 
 - [josetr.cmake-language-support-vscode](https://marketplace.visualstudio.com/items?itemName=josetr.cmake-language-support-vscode)
 - [ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 - [ms-vscode.cpptools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+- [xaver.clang-format](https://marketplace.visualstudio.com/items?itemName=xaver.clang-format)
+- [llvm-vs-code-extensions.vscode-clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
+- [vadimcn.vscode-lldb](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
 
 To install the recommended extensions do `cat cpp_extensions.txt | xargs -I {} code --install-extension {}`
 
@@ -103,7 +107,7 @@ Regarding the settings for C++. They do the following:
 
 - Enable clang-format as the formatter for C++ files.
   - You can format a file by either right click->Format document or `Ctrl+Shift+I`
-  - It is also possible for you to configure vscode to format every time you save. Simply add `        "editor.formatOnSave": true` to your `settings.json`
+  - It is also possible for you to configure vscode to format every time you save. Simply add `"editor.formatOnSave": true` to your `settings.json`
   - **Note**: It requires a `.clang-format` config file
 - Enable clang-tidy code analysis. This ensures that clang-tidy is executed on the currently open file every time you save your changes.
 
@@ -144,15 +148,21 @@ The configurations entered in the `c_cpp_properties.json` do the following:
 ### Python Settings
 
 ```json
-    "python.autoComplete.extraPaths": [
-        "/opt/ros/humble/lib/python3.10/site-packages/"
-    ],
-    "python.envFile": "${workspaceFolder}/.env",
-    "python.analysis.extraPaths": [
-        "/opt/ros/humble/lib/python3.10/site-packages/"
-    ],
-    "python.analysis.typeCheckingMode": "basic",
-    "python.formatting.provider": "black"
+"python.envFile": "${workspaceFolder}/.env",
+"python.autoComplete.extraPaths": [
+    "/opt/ros/humble/lib/python3.10/site-packages/"
+],
+"python.analysis.extraPaths": [
+    "/opt/ros/humble/lib/python3.10/site-packages/"
+],
+"[python]": {                                        // Only applies to python files
+    "editor.defaultFormatter": "charliermarsh.ruff", // Use Ruff as the default formatter
+    "editor.formatOnSave": true,                     // Automatically format on save
+    "editor.codeActionsOnSave": {
+        "source.fixAll.ruff": "explicit",            // Automatically fix fixable lint errors on save
+        "source.organizeImports.ruff": "explicit",   // Automatically organize import statements on save
+    }
+},
 ```
 
 These settings will do the following:
@@ -160,10 +170,10 @@ These settings will do the following:
 - Communicate Pylance where to get additional information for code analysis and auto completion
 - Path to `.env` file where additional environmental variables can be entered
 - Code analysis mode (**Info**: stric is too pedantic)
-    - VsCode will use both Pylance and Ruff to lint your code every time you save
-- Set `black` as code formatter
+  - VsCode will use both Pylance and Ruff to lint your code every time you save
+- Set `ruff` as code formatter
   - You can format a file by either right click->Format document or `Ctrl+Shift+I`
-  - It is also possible for you to configure vscode to format every time you save. Simply add `        "editor.formatOnSave": true` to your `settings.json`
+  - It is also possible for you to configure vscode to format every time you save. Simply add `"editor.formatOnSave": true` to your `settings.json`
 
 ## Tasks
 
