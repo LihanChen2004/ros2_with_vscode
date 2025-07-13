@@ -18,7 +18,7 @@ RUN apt-get update \
 
 RUN pip3 install black
 
-RUN wget https://code.visualstudio.com/sha/download\?build\=stable\&os\=linux-deb-x64 -O code.deb
+RUN wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -O code.deb
 
 RUN apt-get install -y ./code.deb
 
@@ -43,9 +43,7 @@ COPY *_extensions.txt .
 COPY .env .
 
 # Install extensions
-RUN cat general_extensions.txt | xargs -I {} code --install-extension {} \
-  && cat cpp_extensions.txt | xargs -I {} code --install-extension {} \
-  && cat python_extensions.txt | xargs -I {} code --install-extension {}
+RUN chmod +x install_extensions.sh && ./install_extensions.sh
 
 # Clean up apt cache
 RUN sudo apt-get autoremove -y \
