@@ -1,11 +1,22 @@
-# ROS2 compiled directories
-build/
-install/
-log/
+# ROS workspace files
+build
+devel
+install
+log
+.catkin_workspace
 
-# Python files
-*.pyc
+# Python-generated files
+__pycache__/
+*.py[oc]
+dist/
+wheels/
+*.egg-info
+.venv
 
-# Vim swap
-*.swp
-*.swo
+# Common editor files
+.vscode
+.cache
+*~
+*.pcd
+*.gv
+*.pdf

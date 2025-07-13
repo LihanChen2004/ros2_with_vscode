@@ -22,48 +22,7 @@ The configuration here provided can be used as follows:
 
 ## Recommended Extensions
 
-### General Extensions
-
-- [RobbOwen.synthwave-vscode](https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode)
-- [GitHub.copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
-- [usernamehw.errorlens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-- [ms-iot.vscode-ros](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
-- [smilerobotics.urdf](https://marketplace.visualstudio.com/items?itemName=smilerobotics.urdf)
-- [eamodio.gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-- [mhutchie.git-graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
-- [redjue.git-commit-plugin](https://marketplace.visualstudio.com/items?itemName=redjue.git-commit-plugin)
-- [yzhang.markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-- [DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-- [ms-vscode-remote.remote-ssh](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
-- [ms-vscode.remote-explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
-- [ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-- [ms-azuretools.vscode-docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-
-To install the recommended extensions do `cat general_extensions.txt | xargs -I {} code --install-extension {}`
-
-### C++ Extensions
-
-- [jeff-hykin.better-cpp-syntax](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax)
-- [josetr.cmake-language-support-vscode](https://marketplace.visualstudio.com/items?itemName=josetr.cmake-language-support-vscode)
-- [ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
-- [ms-vscode.cpptools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
-- [xaver.clang-format](https://marketplace.visualstudio.com/items?itemName=xaver.clang-format)
-- [llvm-vs-code-extensions.vscode-clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
-- [vadimcn.vscode-lldb](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
-
-To install the recommended extensions do `cat cpp_extensions.txt | xargs -I {} code --install-extension {}`
-
-### Python Extensions
-
-- [charliermarsh.ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
-- [ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [ms-python.vscode-pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-- [ms-toolsai.jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-- [ms-toolsai.jupyter-keymap](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-keymap)
-- [ms-toolsai.jupyter-renderers](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-renderers)
-- [ms-toolsai.vscode-jupyter-cell-tags](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-cell-tags)
-
-To install the recommended extensions do `cat python_extensions.txt | xargs -I {} code --install-extension {}`
+To install the recommended extensions do `./install_extensions.sh`
 
 ## Settings
 
