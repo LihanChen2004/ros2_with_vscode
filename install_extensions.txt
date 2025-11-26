@@ -1,18 +1,26 @@
 # C++
-jeff-hykin.better-cpp-syntax
-llvm-vs-code-extensions.vscode-clangd
 ms-vscode.cpptools
-mtsmfm.vscode-stl-viewer
+ms-vscode.cmake-tools
 vadimcn.vscode-lldb
 xaver.clang-format
+llvm-vs-code-extensions.vscode-clangd
 ms-vscode.cmake-tools
 
 # Python
-charliermarsh.ruff
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
+charliermarsh.ruff
+
+# Git extensions
+eamodio.gitlens
+mhutchie.git-graph
+redjue.git-commit-plugin
+
+# ROS extensions
+Ranch-Hand-Robotics.rde-pack
+morningfrog.urdf-visualizer
 
 # Markdown
 davidanson.vscode-markdownlint
@@ -20,33 +28,17 @@ yzhang.markdown-all-in-one
 bierner.markdown-mermaid
 
 # Docker
-docker.docker
-ms-azuretools.vscode-containers
 ms-azuretools.vscode-docker
-
-# Git tools
-eamodio.gitlens
-mhutchie.git-graph
-redjue.git-commit-plugin
-
-# AI
-github.copilot
-github.copilot-chat
-ms-vscode.vscode-websearchforcopilot
-
-# ROS
-ranch-hand-robotics.rde-pack
-
-# Remote Development
-ms-vscode-remote.remote-containers
-ms-vscode-remote.remote-ssh
-ms-vscode-remote.remote-ssh-edit
-ms-vscode.remote-explorer
 
 # General Extensions
 ms-ceintl.vscode-language-pack-zh-hans
 robbowen.synthwave-vscode
 usernamehw.errorlens
 wakatime.vscode-wakatime
+
 tamasfe.even-better-toml
-redhat.vscode-xml
+DotJoshJohnson.xml
+redhat.vscode-yaml
+
+github.copilot
+github.vscode-github-actions
